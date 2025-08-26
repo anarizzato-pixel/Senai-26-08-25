@@ -22,6 +22,10 @@
             color: #ffffff;
         }
 
+        .nav-link:hover {
+            color: #37c0c5;
+        }
+
         .caixa-principal {
             background-color: #ffffff;
             width: 90%;
@@ -56,6 +60,12 @@
             padding: 10px;
             border-top: 1px solid rgba(0, 0, 0, 0.3);
         }
+
+        .descricao-suco {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
     </style>
 </head>
 
@@ -72,9 +82,21 @@
                 <h1>Selecione o Suco</h1>
                 <div class="caixa-sucos">
                     <button onclick="adicionarSuco('Laranja')">Suco de Laranja</button>
+                    <div id="descricao-laranja" class="descricao-suco" style="display:none;">
+                        O suco de laranja é rico em vitamina C e antioxidantes, ajudando a fortalecer o sistema imunológico.
+                    </div>
                     <button onclick="adicionarSuco('Maçã')">Suco de Maçã</button>
+                    <div id="descricao-maca" class="descricao-suco" style="display:none;">
+                        O suco de maçã é uma excelente fonte de fibras e pode ajudar na digestão e na saúde do coração.
+                    </div>
                     <button onclick="adicionarSuco('Uva')">Suco de Uva</button>
+                    <div id="descricao-uva" class="descricao-suco" style="display:none;">
+                        O suco de uva é rico em polifenóis, que são benéficos para a saúde cardiovascular e têm propriedades anti-inflamatórias.
+                    </div>
                     <button onclick="adicionarSuco('Abacaxi')">Suco de Abacaxi</button>
+                    <div id="descricao-abacaxi" class="descricao-suco" style="display:none;">
+                        O suco de abacaxi é refrescante e contém bromelina, que pode ajudar na digestão e reduzir a inflamação.
+                    </div>
                 </div>
                 <div class="mensagem" id="mensagem"></div>
             </div>
@@ -86,10 +108,17 @@
 
         function adicionarSuco(suco) {
             const mensagem = document.getElementById("mensagem");
+            const descricoes = document.querySelectorAll('.descricao-suco');
+
+            // Oculta todas as descrições
+            descricoes.forEach(descricao => {
+                descricao.style.display = 'none';
+            });
 
             if (sucoAtual === null) {
                 sucoAtual = suco;
                 mensagem.textContent = `Você selecionou o ${suco}. Agora você pode adicionar outro suco.`;
+                document.getElementById(`descricao-${suco.toLowerCase()}`).style.display = 'block'; // Mostra a descrição do suco selecionado
             } else {
                 mensagem.textContent = `Mistura não permitida! Você já selecionou o ${sucoAtual}.`;
             }
@@ -98,4 +127,3 @@
 </body>
 
 </html>
-
