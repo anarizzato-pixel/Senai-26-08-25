@@ -11,11 +11,11 @@
     <style>
         /* Estilos CSS embutidos */
         :root {
-            --cor-fundo: #000000;
+            --cor-fundo: #f8f9fa;
             --cor-principal: #0f7e66;
             --cor-secundaria: #37c0c5;
             --cor-destaque: #ffffff;
-            --cor-texto: #D7F9FF;
+            --cor-texto: #343a40;
         }
 
         body {
@@ -24,8 +24,21 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .caixa-principal {
+        header {
             background-color: var(--cor-principal);
+            padding: 20px 0;
+        }
+
+        .nav-link {
+            color: var(--cor-destaque);
+        }
+
+        .nav-link:hover {
+            color: var(--cor-secundaria);
+        }
+
+        .caixa-principal {
+            background-color: var(--cor-destaque);
             width: 90%;
             max-width: 600px;
             text-align: center;
@@ -36,7 +49,7 @@
         }
 
         h1 {
-            color: var(--cor-destaque);
+            color: var(--cor-principal);
             margin-bottom: 20px;
             font-size: 1.8em;
         }
@@ -62,8 +75,8 @@
         }
 
         button:hover {
-            background-color: var(--cor-destaque);
-            color: var(--cor-principal);
+            background-color: var(--cor-principal);
+            color: var(--cor-destaque);
             transform: translateY(-3px);
         }
 
@@ -72,18 +85,24 @@
             font-size: 1.1em;
             text-align: center;
             padding: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: var(--cor-principal);
+            color: var(--cor-destaque);
+            padding: 20px 0;
         }
     </style>
 </head>
 
 <body>
-    <header class="p-5">
+    <header>
         <nav class="container d-flex justify-content-between align-items-center">
-            <img src="img/download.png" class="nav-img" loading="lazy">
-            <ul class="nav mt-5">
+            <h1 class="text-white">Sistema de Sucos</h1>
+            <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Imagem Marilia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -104,22 +123,22 @@
         </section>
 
         <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens">
-            <h2 class="text-center pt-5">Imagens Marilia Mendonça</h2>
-            <div class="container p-3 mt-3 fundo-galeria ">
+            <h2 class="text-center pt-5">Imagens de Sucos</h2>
+            <div class="container p-3 mt-3">
                 <div class="row justify-content-md-center">
                     <div class="col-md-4">
-                        <img src="img/download.jpeg" class="img-fluid rounded-5" loading="lazy">
+                        <img src="img/suco_laranja.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Laranja">
                     </div>
                     <div class="col-md-4">
-                        <img src="img/images.jpeg" class="img-fluid rounded-5" loading="lazy">
+                        <img src="img/suco_maca.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Maçã">
                     </div>
                 </div>
                 <div class="row mt-4 justify-content-md-center">
                     <div class="col-md-4">
-                        <img src="img/morte.jpeg" class="img-fluid rounded-5" loading="lazy">
+                        <img src="img/suco_uva.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Uva">
                     </div>
                     <div class="col-md-4">
-                        <img src="img/images (1).jpeg" class="img-fluid rounded-5" loading="lazy">
+                        <img src="img/suco_abacaxi.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Abacaxi">
                     </div>
                 </div>
             </div>
@@ -151,7 +170,7 @@
         </section>
     </main>
 
-    <footer class="text-center p-3 fst-italic">
+    <footer class="text-center p-3">
         <p>Contato:</p>
         <i class="bi bi-whatsapp"></i>
         <i class="bi bi-instagram"></i>
