@@ -4,41 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Sistema de Segurança para Sucos</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <style>
-        /* Estilos CSS embutidos */
-        :root {
-            --cor-fundo: #f8f9fa;
-            --cor-principal: #0f7e66;
-            --cor-secundaria: #37c0c5;
-            --cor-destaque: #ffffff;
-            --cor-texto: #343a40;
-        }
-
         body {
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
+            background-color: #f8f9fa;
+            color: #343a40;
             font-family: 'Montserrat', sans-serif;
         }
 
         header {
-            background-color: var(--cor-principal);
+            background-color: #0f7e66;
             padding: 20px 0;
         }
 
         .nav-link {
-            color: var(--cor-destaque);
-        }
-
-        .nav-link:hover {
-            color: var(--cor-secundaria);
+            color: #ffffff;
         }
 
         .caixa-principal {
-            background-color: var(--cor-destaque);
+            background-color: #ffffff;
             width: 90%;
             max-width: 600px;
             text-align: center;
@@ -48,36 +33,20 @@
             margin: 20px auto;
         }
 
-        h1 {
-            color: var(--cor-principal);
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .caixa-sucos {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
         button {
-            background-color: var(--cor-secundaria);
-            color: var(--cor-texto);
+            background-color: #37c0c5;
+            color: #ffffff;
             border: none;
             border-radius: 15px;
             padding: 15px;
             font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease;
             width: 100%;
         }
 
         button:hover {
-            background-color: var(--cor-principal);
-            color: var(--cor-destaque);
-            transform: translateY(-3px);
+            background-color: #0f7e66;
         }
 
         .mensagem {
@@ -87,12 +56,6 @@
             padding: 10px;
             border-top: 1px solid rgba(0, 0, 0, 0.3);
         }
-
-        footer {
-            background-color: var(--cor-principal);
-            color: var(--cor-destaque);
-            padding: 20px 0;
-        }
     </style>
 </head>
 
@@ -100,11 +63,6 @@
     <header>
         <nav class="container d-flex justify-content-between align-items-center">
             <h1 class="text-white">Sistema de Sucos</h1>
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>
         </nav>
     </header>
 
@@ -121,62 +79,7 @@
                 <div class="mensagem" id="mensagem"></div>
             </div>
         </section>
-
-        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens">
-            <h2 class="text-center pt-5">Imagens de Sucos</h2>
-            <div class="container p-3 mt-3">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img/suco_laranja.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Laranja">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/suco_maca.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Maçã">
-                    </div>
-                </div>
-                <div class="row mt-4 justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img/suco_uva.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Uva">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/suco_abacaxi.jpg" class="img-fluid rounded-5" loading="lazy" alt="Suco de Abacaxi">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario">
-                    <h2 class="mb-3">Entre em contato</h2>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="Digite seu email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem"></textarea>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <footer class="text-center p-3">
-        <p>Contato:</p>
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-tiktok"></i>
-        <p class="mt-3">Desenvolvido por Ana Luiza Rizzato. Projeto da Aula de programação (Professora Carolina Assis).</p>
-    </footer>
 
     <script>
         let sucoAtual = null;
@@ -195,3 +98,4 @@
 </body>
 
 </html>
+
